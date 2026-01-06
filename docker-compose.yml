@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  # Service Base de Données
+  postgres-db:
+    image: postgres:15-alpine
+    container_name: muslim_tracker_db
+    ports:
+      - "5432:5432"  # Port Host : Port Container
+    environment:
+      - POSTGRES_USER=tracker_user
+      - POSTGRES_PASSWORD=tracker_password
+      - POSTGRES_DB=muslim_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data # Pour ne pas perdre les données si on redémarre
+    restart: always
+
+volumes:
+  postgres_data:

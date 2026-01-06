@@ -1,0 +1,28 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: Bina-Nafsi
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/muslim_db
+    username: tracker_user
+    password: tracker_password
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update  # Crée/Met à jour les tables automatiquement
+    show-sql: true      # Affiche les requêtes SQL dans la console (utile pour le debug)
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+
+# Configuration JWT (On l'utilisera plus tard)
+application:
+  security:
+    jwt:
+      secret-key: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
+      expiration: 86400000 # 1 jour
