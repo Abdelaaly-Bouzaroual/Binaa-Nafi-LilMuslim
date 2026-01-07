@@ -1,7 +1,7 @@
 package com.binaa.nafsi.binanafsi.controller;
 
 import com.binaa.nafsi.binanafsi.dto.RegisterRequest;
-import com.binaa.nafsi.binanafsi.service.UserService;
+import com.binaa.nafsi.binanafsi.service.UserService; // Import de l'Interface
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 public class AuthController {
 
+    // Spring injectera automatiquement UserServiceImpl ici
     private final UserService userService;
 
     @PostMapping("/register")

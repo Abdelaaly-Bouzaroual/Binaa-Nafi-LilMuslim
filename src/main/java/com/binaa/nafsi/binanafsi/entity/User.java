@@ -24,4 +24,6 @@ public class User {
     private String arabicName;
 
     private String telegramId;
+    private String role;   // Ex: "USER", "ADMIN"
+    private boolean active; // Ex: true (activé), false (banni)
 }
